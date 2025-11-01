@@ -22,7 +22,7 @@ def update_access_token_in_config(new_token, config_path="config.py"):
 
 while True:
 
-    if keyboard.is_pressed("ctrl+f7"):
+    if keyboard.is_pressed("f7") and keyboard.is_pressed("ctrl"):
         response = requests.post(
             "https://api.spotify.com/v1/me/player/previous",
             headers={
@@ -35,7 +35,7 @@ while True:
             access_token =reset_access_token()
             update_access_token_in_config(access_token)
 
-    elif keyboard.is_pressed("ctrl+f8"):
+    elif keyboard.is_pressed("f8") and keyboard.is_pressed("ctrl"):
         response = requests.post(
             "https://api.spotify.com/v1/me/player/next",
             headers={
